@@ -1,0 +1,11 @@
+/* WIDGET STYLES */
+.widget.widget-text.pyimg_upsell_widget_box{
+	padding: 15px; max-width: 282px; background-color: #F2F1F3;
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.35);
+	box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.35);
+}
+.widget.widget-text.pyimg_upsell_widget_box p{margin-bottom: 8px;}
+.widget.widget-text.pyimg_upsell_widget_box ul{margin-bottom: 8px; list-style: disc;}
+.widget.widget-text.pyimg_upsell_widget_box ul li{padding-top: 0px; padding-bottom: 0px; margin-left: 20px; margin-bottom: 0px; background-color: inherit;}
+.widget.widget-text.pyimg_upsell_widget_box a{padding: 10px; font-size: 14px; text-align: center; font-weight: bold; color: #FFFFFF; background-color: #EB4946; display: block;}

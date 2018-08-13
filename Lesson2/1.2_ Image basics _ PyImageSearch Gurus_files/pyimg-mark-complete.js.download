@@ -1,0 +1,37 @@
+jQuery(document).ready(function(){
+	// initialize the tooltip message
+	msg = "";
+
+	// check to see if there are quizzes on this page
+	if (jQuery("#learndash_quizzes").length > 0){
+		// grab the quiz link
+		quizLink = jQuery("#quiz_list h4 a").first();
+
+		// check and see if the quiz has been completed
+		if (quizLink.attr("class") == "completed"){
+			// check to see if the 'Mark Complete' form is on the page
+			if (jQuery("#sfwd-mark-complete").length > 0){
+				msg = "Nice job completing the quiz! Click this button to continue.";
+			}
+		}
+	}
+
+	// otherwise, check to see if there is a 'Mark Complete' form
+	else if (jQuery("#sfwd-mark-complete").length > 0){
+		title = jQuery("h1.entry-title").first().text();
+		title = title.substring(title.indexOf(" ") + 1);
+		msg = "Congrats on finishing the '" + title + "' set of lessons! Click this button to continue.";
+	}
+
+	// if the message is not empty, attach it to the 'Mark Complete' button
+	if (msg != ""){
+		setTimeout(function(){
+			button = jQuery("#sfwd-mark-complete input[type=submit]");
+			button.attr("rel", "tipsy");
+			button.attr("title", msg);
+			jQuery("#sfwd-mark-complete input[type=submit]").tipsy({trigger: "manual",
+				gravity: "w", fade: true});
+			jQuery("#sfwd-mark-complete input[type=submit]").tipsy("show");
+		}, 1250);
+	}
+});

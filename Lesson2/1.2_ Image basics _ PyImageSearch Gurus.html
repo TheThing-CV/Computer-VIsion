@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://gurus.pyimagesearch.com/lessons/image-basics/ -->
+<html class=" js no-touch cssanimations csstransforms csstransforms3d csstransitions" lang="en-US" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.2: Image basics | PyImageSearch Gurus</title>
+<link rel="pingback" href="https://gurus.pyimagesearch.com/xmlrpc.php"><link rel="shortcut icon" href="https://www.pyimagesearch.com/wp-content/themes/canvas/favicon.ico"><link rel="alternate" type="application/rss+xml" title="PyImageSearch Gurus » Feed" href="https://gurus.pyimagesearch.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="PyImageSearch Gurus » Comments Feed" href="https://gurus.pyimagesearch.com/comments/feed/">
+		<script async="" src="./1.2_ Image basics _ PyImageSearch Gurus_files/analytics.js.download"></script><script type="text/javascript" async="" src="./1.2_ Image basics _ PyImageSearch Gurus_files/4768429.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/gurus.pyimagesearch.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./1.2_ Image basics _ PyImageSearch Gurus_files/wp-emoji-release.min.js.download" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="usernoise-adminbar-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/admin-bar.css" type="text/css" media="all">
+<link rel="stylesheet" id="usernoise-button-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/button.css" type="text/css" media="all">
+<link rel="stylesheet" id="usernoise-form-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/form.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="thickbox-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/thickbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-arduino-ide-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/arduino-ide.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-ubuntu-mono-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/ubuntu-mono.css" type="text/css" media="all">
+<link rel="stylesheet" id="gurus_upsell_css-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/gurus_upsell.css" type="text/css" media="all">
+<link rel="stylesheet" id="mp-theme-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/theme.css" type="text/css" media="all">
+<link rel="stylesheet" id="tipsy_css-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/tipsy.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpProQuiz_front_style-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/wpProQuiz_front.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="learndash_style-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="sfwd_front_css-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/front.css" type="text/css" media="all">
+<link rel="stylesheet" id="jquery-dropdown-css-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/jquery.dropdown.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sfwd_template_css-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/learndash_template_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="badgeos-single-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/badgeos-single.css" type="text/css" media="all">
+<link rel="stylesheet" id="x-stack-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/renew.css" type="text/css" media="all">
+<link rel="stylesheet" id="x-child-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="x-google-fonts-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/css" type="text/css" media="all">
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/jquery.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var usernoiseButton = {"text":"Feedback","style":"background-color: #169FE6; color: #FFFFFF","class":"un-right","windowUrl":"\/wp-admin\/admin-ajax.php?action=un_load_window","showButton":"1","disableOnMobiles":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/usernoise.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/button.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/gurus.pyimagesearch.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/crayon.min.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/jquery.tipsy.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/pyimg-mark-complete.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/x-head.min.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/x-shortcodes-head.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://gurus.pyimagesearch.com/wp-json/">
+<link rel="canonical" href="https://gurus.pyimagesearch.com/lessons/image-basics/">
+<link rel="shortlink" href="https://gurus.pyimagesearch.com/?p=399">
+<link rel="alternate" type="application/json+oembed" href="https://gurus.pyimagesearch.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgurus.pyimagesearch.com%2Flessons%2Fimage-basics%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://gurus.pyimagesearch.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgurus.pyimagesearch.com%2Flessons%2Fimage-basics%2F&amp;format=xml">
+<style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+<style id="x-generated-css" type="text/css">a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,.x-comment-time:hover,#reply-title small a,.comment-reply-link:hover,.x-comment-author a:hover,.x-recent-posts a:hover .h-recent-posts{color:#169fe6;}a:hover,#reply-title small a:hover{color:#169fe6;}.entry-title:before{color:#f1ba63;}a.x-img-thumbnail:hover,li.bypostauthor > article.comment{border-color:#169fe6;}.flex-direction-nav a,.flex-control-nav a:hover,.flex-control-nav a.flex-active,.x-dropcap,.x-skill-bar .bar,.x-pricing-column.featured h2,.h-comments-title small,.x-pagination a:hover,.x-entry-share .x-share:hover,.entry-thumb,.widget_tag_cloud .tagcloud a:hover,.widget_product_tag_cloud .tagcloud a:hover,.x-highlight,.x-recent-posts .x-recent-posts-img:after,.x-portfolio-filters{background-color:#169fe6;}.x-portfolio-filters:hover{background-color:#169fe6;}.x-main{width:68.79803%;}.x-sidebar{width:24.79803%;}.x-topbar .p-info,.x-topbar .p-info a,.x-topbar .x-social-global a{color:#ffffff;}.x-topbar .p-info a:hover{color:#959baf;}.x-topbar{background-color:#1f2c39;}.x-navbar .desktop .x-nav > li:before{padding-top:35px;}.x-navbar .desktop .x-nav > li > a,.x-navbar .desktop .sub-menu li > a,.x-navbar .mobile .x-nav li a{color:#ffffff;}.x-navbar .desktop .x-nav > li > a:hover,.x-navbar .desktop .x-nav > .x-active > a,.x-navbar .desktop .x-nav > .current-menu-item > a,.x-navbar .desktop .sub-menu li > a:hover,.x-navbar .desktop .sub-menu li.x-active > a,.x-navbar .desktop .sub-menu li.current-menu-item > a,.x-navbar .desktop .x-nav .x-megamenu > .sub-menu > li > a,.x-navbar .mobile .x-nav li > a:hover,.x-navbar .mobile .x-nav li.x-active > a,.x-navbar .mobile .x-nav li.current-menu-item > a{color:#ffffff;}.x-btn-navbar,.x-btn-navbar:hover{color:#ffffff;}.x-navbar .desktop .sub-menu li:before,.x-navbar .desktop .sub-menu li:after{background-color:#ffffff;}.x-navbar,.x-navbar .sub-menu{background-color:#169fe6 !important;}.x-btn-navbar,.x-btn-navbar.collapsed:hover{background-color:#666666;}.x-btn-navbar.collapsed{background-color:#444444;}.x-navbar .desktop .x-nav > li > a:hover > span,.x-navbar .desktop .x-nav > li.x-active > a > span,.x-navbar .desktop .x-nav > li.current-menu-item > a > span{box-shadow:0 2px 0 0 #ffffff;}.x-navbar .desktop .x-nav > li > a{height:90px;padding-top:35px;}.x-navbar .desktop .x-nav > li ul{top:90px;}.x-colophon.bottom{background-color:#ffffff;}.x-colophon.bottom,.x-colophon.bottom a,.x-colophon.bottom .x-social-global a{color:#a1a1a1;}.h-landmark{font-weight:300;}.x-comment-author a{color:#414141;}.x-comment-author a,.comment-form-author label,.comment-form-email label,.comment-form-url label,.comment-form-rating label,.comment-form-comment label,.widget_calendar #wp-calendar caption,.widget_calendar #wp-calendar th,.x-accordion-heading .x-accordion-toggle,.x-nav-tabs > li > a:hover,.x-nav-tabs > .active > a,.x-nav-tabs > .active > a:hover{color:#414141;}.widget_calendar #wp-calendar th{border-bottom-color:#414141;}.x-pagination span.current,.x-portfolio-filters-menu,.widget_tag_cloud .tagcloud a,.h-feature-headline span i,.widget_price_filter .ui-slider .ui-slider-handle{background-color:#414141;}@media (max-width:979px){}body{font-size:12px;font-style:normal;font-weight:300;color:#414141;background-color:#ffffff;}a:focus,select:focus,input[type="file"]:focus,input[type="radio"]:focus,input[type="submit"]:focus,input[type="checkbox"]:focus{outline:thin dotted #333;outline:5px auto #169fe6;outline-offset:-1px;}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:"Lato",sans-serif;font-style:normal;font-weight:900;}h1,.h1{letter-spacing:-0.018em;}h2,.h2{letter-spacing:-0.025em;}h3,.h3{letter-spacing:-0.031em;}h4,.h4{letter-spacing:-0.042em;}h5,.h5{letter-spacing:-0.048em;}h6,.h6{letter-spacing:-0.071em;}.w-h{font-weight:900 !important;}.x-container.width{width:90%;}.x-container.max{max-width:1220px;}.x-main.full{float:none;display:block;width:auto;}@media (max-width:979px){.x-main.full,.x-main.left,.x-main.right,.x-sidebar.left,.x-sidebar.right{float:none;display:block;width:auto !important;}}.entry-header,.entry-content{font-size:16px;}body,input,button,select,textarea{font-family:"Lato",sans-serif;}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,.h1 a,.h2 a,.h3 a,.h4 a,.h5 a,.h6 a,blockquote{color:#414141;}.cfc-h-tx{color:#414141 !important;}.cfc-h-bd{border-color:#414141 !important;}.cfc-h-bg{background-color:#414141 !important;}.cfc-b-tx{color:#414141 !important;}.cfc-b-bd{border-color:#414141 !important;}.cfc-b-bg{background-color:#414141 !important;}.x-navbar-inner{min-height:90px;}.x-brand{margin-top:20px;font-family:"Pacifico",cursive;font-size:44px;font-style:normal;font-weight:400;letter-spacing:-0.068em;color:#444444;}.x-brand:hover,.x-brand:focus{color:#444444;}.x-navbar .x-nav-wrap .x-nav > li > a{font-family:"Lato",sans-serif;font-style:normal;font-weight:700;letter-spacing:0.071em;text-transform:uppercase;}.x-navbar .desktop .x-nav > li > a{font-size:14px;}.x-navbar .desktop .x-nav > li > a:not(.x-btn-navbar-woocommerce){padding-left:14px;padding-right:14px;}.x-navbar .desktop .x-nav > li > a > span{margin-right:-0.071em;}.x-btn-navbar{margin-top:20px;}.x-btn-navbar,.x-btn-navbar.collapsed{font-size:22px;}@media (max-width:979px){.x-widgetbar{left:0;right:0;}}.x-btn,.button,[type="submit"]{color:#ffffff;border-color:#7fbf2a;background-color:#7fbf2a;margin-bottom:0.25em;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.5);box-shadow:0 0.25em 0 0 #5f9f0a,0 4px 9px rgba(0,0,0,0.75);border-radius:0.25em;padding:0.579em 1.105em 0.842em;font-size:19px;}.x-btn:hover,.button:hover,[type="submit"]:hover{color:#fff;border-color:#7fbf2a;background-color:#7fbf2a;margin-bottom:0.25em;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.5);box-shadow:0 0.25em 0 0 #5f9f0a,0 4px 9px rgba(0,0,0,0.75);}.x-btn.x-btn-real,.x-btn.x-btn-real:hover{margin-bottom:0.25em;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.65);}.x-btn.x-btn-real{box-shadow:0 0.25em 0 0 #5f9f0a,0 4px 9px rgba(0,0,0,0.75);}.x-btn.x-btn-real:hover{box-shadow:0 0.25em 0 0 #5f9f0a,0 4px 9px rgba(0,0,0,0.75);}.x-btn.x-btn-flat,.x-btn.x-btn-flat:hover{margin-bottom:0;text-shadow:0 0.075em 0.075em rgba(0,0,0,0.65);box-shadow:none;}.x-btn.x-btn-transparent,.x-btn.x-btn-transparent:hover{margin-bottom:0;border-width:3px;text-shadow:none;text-transform:uppercase;background-color:transparent;box-shadow:none;}/* Adjust the color of paragraph blocks*/
+article p{color: #212121;}
+
+/* Adjust the link hover actions */
+a:hover{text-decoration: underline;}
+
+/* Make the logo fit in the header properly and add a border to the bottom of the header */
+a.x-brand img {margin-top: -15px;}
+header.masthead.masthead-inline{border-top: 5px solid #068fd6; border-bottom: 1px solid #068fd6}
+
+/* Adjust post header sizes */
+article.post header.entry-header h1.entry-title{font-size: 250%;}
+article.post .entry-content.content h1{font-size: 200%;}
+article.post .entry-content.content h2{font-size: 142.85%;}
+article.post .entry-content.content h3{font-size: 114.25%;}
+article.post .entry-content.content h4{font-size: 85.7%;}
+article.post .entry-content.content h5{font-size: 75%;}
+article.post .entry-content.content h6{font-size: 50%;}
+article.post header.entry-header h1.entry-title, article.sfwd-lessons header.entry-header h1.entry-title, article.sfwd-topic header.entry-header h1.entry-title{font-size: 250%;}
+
+/* Adjust the course in post headers */
+article.sfwd-lessons .learndash.user_has_access h1, article.sfwd-topic .learndash.user_has_access h1, article.page h1{font-size: 200%;}
+article.sfwd-lessons .learndash.user_has_access h2, article.sfwd-topic .learndash.user_has_access h2, article.page h2{font-size: 142.85%;}
+article.sfwd-lessons .learndash.user_has_access h3, article.sfwd-topic .learndash.user_has_access h3, article.page h3{font-size: 114.25%;}
+article.sfwd-lessons .learndash.user_has_access h4, article.sfwd-topic .learndash.user_has_access h4, article.page h4{font-size: 85.7%;}
+article.sfwd-lessons .learndash.user_has_access h5, article.sfwd-topic .learndash.user_has_access h5, article.page h5{font-size: 75%;}
+article.sfwd-lessons .learndash.user_has_access h6, article.sfwd-topic.learndash.user_has_access h6, article.page h6{font-size: 50%;}
+article.post header.entry-header h1.entry-title{font-size: 250%;}
+
+/* Make the post icon the standard blue */
+h1.entry-title::before, h2.entry-title::before{color: #169fe6}
+
+/* Hide the author attribution section and the tags section */
+article.post p.p-meta, article.post footer.entry-footer.cf{display: none;}
+article.sfwd-lessons header.entry-header p.p-meta{display: none;}
+article.sfwd-topic header.entry-header p.p-meta{display: none;}
+article.sfwd-courses header.entry-header{display: none;}
+article.sfwd-courses footer.entry-footer.cf{display: none;}
+article.sfwd-topic footer.entry-footer.cf{display: none;}
+article.page footer.entry-footer.cf{display: none;}
+
+/* Format quizzes */
+article.sfwd-quiz header.entry-header{display: none;}
+article.sfwd-quiz footer.entry-footer{display: none;}
+article.sfwd-quiz .wpProQuiz_content h2{margin-top: 0px;}
+
+/* Course table updates */
+article.sfwd-courses #learndash_lessons a{font-weight: bold;}
+article.sfwd-courses .notavailable_message{font-size: 13px; font-family: "Helvetica Neue",Helvetica,sans-serif; color: #717171;}
+
+/* Hide the post header section from unauthorized access */
+article.category-uncategorized header.entry-header{display: none;}
+article.category-uncategorized .mepr-unauthorized-message h4{margin-top: 0px;}
+article.sfwd-lessons footer.entry-footer.cf{display: none;}
+
+/* Fix the header on the login and authorized page */
+article#post-6 h4{font-size: 142.85%;}
+
+/* Adjust the size of the login form inputs */
+input#user_login, input#user_pass{width: 60%;}
+
+/* Adjust the widths of input fields on the registration form */
+#mepr_registerform input[type=text], input[type=password]{width: 35%;}
+
+/* Hide the header breadcrumb certain pages */
+.postid-28 header.x-header-landmark, .postid-3148 header.x-header-landmark, .postid-91 header.x-header-landmark, .postid-95 header.x-header-landmark, .postid-92 header.x-header-landmark, .postid-97 header.x-header-landmark, .postid-98 header.x-header-landmark, .postid-93 header.x-header-landmark, .postid-96 header.x-header-landmark, .postid-99 header.x-header-landmark, .postid-94 header.x-header-landmark, .postid-100 header.x-header-landmark, .page-id-6 header.x-header-landmark{display: none;}
+
+/* Adjust letter spacing on lesson not available spacing */
+small.notavailable_message{letter-spacing: -0.5px;}
+
+/* Extra padding for full line Latex equations */
+div.latex_equation_line{margin-bottom: 1.5em;}
+
+.page-id-4042 #top, .page-id-4044 #top, .page-id-4036 #top, .page-id-4103 #top, .page-id-4101 #top{background: url('https://gurus.pyimagesearch.com/wp-content/uploads/2015/10/sample_lesson.png') 0px 0px repeat;}
+
+/* BadgeOS Notification styles */
+#TB_ajaxContent{width: 640px !important;}
+#TB_title{color: #FFFFFF;}
+#badgeos_congrats .badgeos-congrats-achievement{padding: 10px; padding-left: 15px;}
+#badgeos_congrats .badgeos-congrats-achievement p.title{margin-bottom: 10px;}
+#badgeos_congrats .badgeos-congrats-achievement .content{margin-top: 10px;}
+#badgeos_congrats .badgeos-congrats-achievement .content p{margin: 0px; padding: 0px; font-size: 16px; line-height: 22px;}
+#badgeos_congrats .badgeos-congrats-achievement .content .course_progress{margin-left: 0px;}
+
+/* User achievements page */
+article.user-has-earned header.entry-header p.p-meta, article.user-has-not-earned header.entry-header p.p-meta{display: none;}
+article.user-has-earned .entry-featured, article.user-has-not-earned .entry-featured{display: none;}
+article.user-has-earned .badgeos-achievement-congratulations, article.user-has-not-earned .badgeos-achievement-congratulations{display: none;}
+
+/* Hide breadcrumb on Certificates page */
+body.page-id-10138 .x-header-landmark{display: none;}</style></head>
+
+<body class="single single-sfwd-lessons postid-399 logged-in x-renew x-navbar-static-active x-full-width-layout-active x-content-sidebar-active x-v4_3_4 x-child-theme-active x-shortcodes-v3_0_5" cz-shortcut-listen="true">
+
+  
+  <div id="top" class="site">
+
+  
+  
+  <header class="masthead masthead-inline" role="banner">
+    
+    
+
+  <div class="x-navbar-wrap">
+    <div class="x-navbar">
+      <div class="x-navbar-inner">
+        <div class="x-container max width">
+          
+
+<a href="https://gurus.pyimagesearch.com/" class="x-brand img" title="A course and community designed to take you from computer vision beginner to guru.">
+  <img src="./1.2_ Image basics _ PyImageSearch Gurus_files/pyimagesearch_gurus_logo.png" alt="A course and community designed to take you from computer vision beginner to guru."></a>          
+<a href="https://gurus.pyimagesearch.com/lessons/image-basics/#" class="x-btn-navbar collapsed" data-toggle="collapse" data-target=".x-nav-wrap.mobile">
+  <i class="x-icon-bars" data-x-icon=""></i>
+  <span class="visually-hidden">Navigation</span>
+</a>
+
+<nav class="x-nav-wrap desktop" role="navigation">
+  <ul id="menu-main-menu" class="x-nav"><li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="https://gurus.pyimagesearch.com/"><span>Login</span></a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="http://community.pyimagesearch.com/"><span>Community</span></a></li>
+</ul></nav>
+
+<div class="x-nav-wrap mobile collapse">
+  <ul id="menu-main-menu-1" class="x-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="https://gurus.pyimagesearch.com/"><span>Login</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="http://community.pyimagesearch.com/"><span>Community</span></a></li>
+</ul></div>        </div>
+      </div>
+    </div>
+  </div>
+
+  </header>
+
+    
+  
+    <header class="x-header-landmark">
+      <div class="x-container max width">
+        <div class="x-landmark-breadcrumbs-wrap">
+          <div class="x-landmark">
+
+                      
+              <h1 class="h-landmark"><span>PyImageSearch Gurus Course</span></h1>
+
+                      
+          </div>
+
+                                    <div class="x-breadcrumbs-wrap">
+                <div class="x-breadcrumbs"><a href="https://gurus.pyimagesearch.com/"><span class="home"><i class="x-icon-home" data-x-icon=""></i></span></a> <span class="delimiter"><i class="x-icon-angle-right" data-x-icon=""></i></span> </div>              </div>
+                      
+          
+        </div>
+      </div>
+    </header>
+
+    
+  <div class="x-container max width offset">
+    <div class="x-main left" role="main">
+
+              
+<article id="post-399" class="post-399 sfwd-lessons type-sfwd-lessons status-publish hentry tag-instant-access tag-month-1 user-has-not-earned no-post-thumbnail">
+  <div class="entry-wrap">
+    
+<header class="entry-header">
+    <h1 class="entry-title">1.2: Image basics</h1>
+    <p class="p-meta"><span>Adrian</span><span><time class="entry-date" datetime="2015-03-30T10:06:30+00:00">March 30, 2015</time></span><span></span></p></header>        
+
+
+<div class="entry-content content">
+
+
+  <div class="learndash user_has_access" id="learndash_post_399">
+
+
+	<p>So how are we feeling after the <a title="1.1: Loading, displaying, and saving images" href="https://gurus.pyimagesearch.com/lessons/loading-displaying-and-saving-images/">first lesson</a>?</p>
+<p>Not too bad right? Keep it up — you’re doing great.</p>
+<p>And if you need any help regarding command line arguments, I would suggest heading over to the <a href="https://community.pyimagesearch.com/">PyImageSearch Gurus Community</a> and asking for some advice and pointers&nbsp;from some of our more seasoned Unix experts.</p>
+<h1>Objectives:</h1>
+<p>In this section&nbsp;we are going to review the building blocks of an image — the pixel. We’ll discuss exactly what a pixel is, how pixels are used to form an image, and then how to access and manipulate pixels in OpenCV. By the end of this lesson you’ll:</p>
+<ol>
+<li>Have a full understanding of what a “pixel” is.</li>
+<li>Understand the coordinate system of an image.</li>
+<li>Have the ability to access the Red, Green, and Blue (RGB) values of a pixel…</li>
+<li>…Along with set the RGB values of a pixel.</li>
+<li>Have a gentle introduction to extracting regions from an image.</li>
+</ol>
+<h1>So, what’s a pixel?</h1>
+<p>Pixels are the raw building blocks of an image. Every image consists of a set of pixels. There is no finer granularity than the pixel.</p>
+<p>Normally, a pixel is considered the “color” or the “intensity” of light that appears in a given place in our image.</p>
+<p>If we think of an image as a grid, each square in the grid contains a single pixel.</p>
+<p>Let’s take a look at the example image below:</p>
+<div id="attachment_829" style="width: 610px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/florida_trip.jpg"><img class="size-full wp-image-829" src="./1.2_ Image basics _ PyImageSearch Gurus_files/florida_trip.jpg" alt="Figure 1: This image is 600 wide and 450 pixels tall. In total, this image is comprised of 270,000 pixels!" width="600" height="450" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/florida_trip-300x225.jpg 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/florida_trip-100x75.jpg 100w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/florida_trip.jpg 600w" sizes="(max-width: 600px) 100vw, 600px"></a><p class="wp-caption-text"><strong>Figure 1:</strong> This image is 600 wide and 450 pixels tall, for a total of <em>600 x 450 =&nbsp;270,000</em> pixels!</p></div>
+<p>The image in <strong>Figure 1</strong> above has a&nbsp;resolution of 6<em>00 x 450</em>, meaning that it is 600 wide and 450 pixels tall.&nbsp;This means that our image is represented as a grid of pixels, with 600 columns&nbsp;and 450 rows. Overall, there are 600<em>&nbsp;x 450 = 270,000</em>&nbsp;pixels in our image.</p>
+<p>Most pixels are represented in two ways: grayscale and color. In a grayscale image, each pixel has a value between <em>0</em> and <em>255</em>, where zero is corresponds to “black” and <em>255</em>&nbsp;being “white”. The values in between <em>0</em>&nbsp;and <em>255</em>&nbsp;are varying shades of gray, where values closer to <em>0</em>&nbsp;are darker and values closer <em>255</em> are lighter:</p>
+<div id="attachment_830" style="width: 810px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/image_gradient.jpg"><img class="wp-image-830" src="./1.2_ Image basics _ PyImageSearch Gurus_files/image_gradient.jpg" alt="Figure 2: Image gradient demonstrating pixel values going from black (0) to white (255)." width="800" height="100" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/image_gradient-300x38.jpg 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/image_gradient.jpg 800w" sizes="(max-width: 800px) 100vw, 800px"></a><p class="wp-caption-text"><strong>Figure 2:</strong> Image gradient demonstrating pixel values going from black (0) to white (255).</p></div>
+<p>The grayscale gradient image in <strong>Figure 2</strong>&nbsp;above demonstrates&nbsp;<em>darker pixels</em> on the left-hand side and progressively&nbsp;<em>lighter pixels&nbsp;</em>on the right-hand side.</p>
+<p>Color pixels, however, are normally represented in the RGB color space — one value for the Red component, one for Green, and one for Blue, leading to a total of&nbsp;<em>3 values per pixel</em>:</p>
+<div id="attachment_838" style="width: 352px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/rgb_cube.jpg"><img class="size-full wp-image-838" src="./1.2_ Image basics _ PyImageSearch Gurus_files/rgb_cube.jpg" alt="Figure 3: The RGB cube." width="342" height="400" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/rgb_cube-100x117.jpg 100w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/rgb_cube.jpg 342w" sizes="(max-width: 342px) 100vw, 342px"></a><p class="wp-caption-text"><strong>Figure 3:</strong> The RGB cube.</p></div>
+<p>Other color spaces exist, but let’s start with the basics and move our way up from there.</p>
+<p>Each of the three Red, Green, and Blue colors are represented by an integer in the range <em>0</em> to <em>255</em>, which indicates how “much” of the color there is. Given that the pixel value only needs to be in the range <em>[0, 255]</em> we normally use an 8-bit unsigned integer to represent each color intensity.</p>
+<p>We then combine these values into a RGB tuple in the form 
+			<span id="crayon-5b6c7fd2e1254533843215" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-v">red</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">green</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">blue</span><span class="crayon-sy">)</span></span></span>&nbsp;. This tuple represents our color.</p>
+<p>To construct a white color, we would fill each of the red, green, and blue buckets completely up, like this: 
+			<span id="crayon-5b6c7fd2e1265062678214" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">)</span></span></span>&nbsp;— since white is the presence of all color.</p>
+<p>Then, to create a black color, we would empty each of the buckets out: 
+			<span id="crayon-5b6c7fd2e126a801007701" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span>&nbsp;— since black is the absence of color.</p>
+<p>To create a pure red color, we would fill up the red bucket (and only the red bucket) up completely: 
+			<span id="crayon-5b6c7fd2e126e469921155" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span>&nbsp;.</p>
+<p>Are you starting to see a pattern?</p>
+<p>Take a look at the following image to make this concept more clear:</p>
+<div id="attachment_831" style="width: 410px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/color_examples.jpg"><img class="size-full wp-image-831" src="./1.2_ Image basics _ PyImageSearch Gurus_files/color_examples.jpg" alt="Figure 3: Here we have three examples of colors and the &quot;bucket&quot; amounts for each of the Red, Green, and Blue components." width="400" height="400" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/color_examples-150x150.jpg 150w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/color_examples-300x300.jpg 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/color_examples-100x100.jpg 100w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/color_examples.jpg 400w" sizes="(max-width: 400px) 100vw, 400px"></a><p class="wp-caption-text"><strong>Figure 4:</strong> Here we have three examples of colors and the “bucket” amounts for each of the Red, Green, and Blue components.</p></div>
+<p>In the <i>Top-Left</i> example we have the color&nbsp;<em>white&nbsp;</em>— each of the Red, Green, and Blue buckets have been completely filled up to form the white color. And on the&nbsp;<em>Top-Right</em>, we have the color&nbsp;<em>black</em> — the Red, Green, and Blue buckets are now totally empty.</p>
+<p>Similarly, to form the color red in the&nbsp;<em>Bottom-Left</em> we simply fill up the Red bucket completely, leaving the other Green and Blue buckets totally empty. Finally, blue is formed by filling up only the Blue bucket, as demonstrated in the&nbsp;<em>Bottom-Right</em>.</p>
+<p>For your reference, here are some common colors represented as RGB tuples:</p>
+<ul>
+<li><strong>Black:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e1273744454210" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>White:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e1279832262413" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Red:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e1280934632593" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Green:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e1286082938889" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Blue:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e128d402003226" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Aqua:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e1293625990727" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Fuchsia:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e1299644616477" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Maroon:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e129f550267190" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">128</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Navy:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e12aa154415779" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">128</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Olive:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e12b2303324424" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">128</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">128</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Purple:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e12b7803231997" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">128</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">128</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Teal:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e12be940526806" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">128</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">128</span><span class="crayon-sy">)</span></span></span></li>
+<li><strong>Yellow:</strong>&nbsp;
+			<span id="crayon-5b6c7fd2e12c5945150426" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span></li>
+</ul>
+<p>Now that we have a good understanding of pixels, let’s have a quick review of the coordinate system.</p>
+<h1 id="overview_coord_system">Overview of the Coordinate System</h1>
+<p>As I mentioned in <strong>Figure 1</strong>&nbsp;above, an image is represented as a grid of pixels. Imagine our grid as a piece of graph paper. Using this graph paper, the point <em>(0, 0)</em>&nbsp;corresponds to the upper left corner of the image. As we move down and to the right, both the <em>x</em>&nbsp;and <em>y</em>&nbsp;values increase.</p>
+<p>Let’s take a look at the image in <strong>Figure 5</strong>&nbsp;to make this point more clear:</p>
+<div id="attachment_1552" style="width: 410px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/image_grid.png"><img class="wp-image-1552" src="./1.2_ Image basics _ PyImageSearch Gurus_files/image_grid.png" alt="Figure 5: The letter &quot;I&quot; placed on a piece of graph paper. Pixels are accessed by their (x, y) coordinates, where we go x columns to the right and y rows down, keeping in mind that Python is zero-indexed: we start counting from zero rather than one." width="400" height="394" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/image_grid-300x296.png 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/image_grid-865x853.png 865w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/image_grid.png 945w" sizes="(max-width: 400px) 100vw, 400px"></a><p class="wp-caption-text"><strong>Figure 5:</strong> The letter “I” placed on a piece of graph paper. Pixels are accessed by their (x, y) coordinates, where we go x columns to the right and y&nbsp;rows down, keeping in mind that Python is zero-indexed: we start counting from zero rather than one.</p></div>
+<p>Here we have the letter “I” on a piece of graph paper. We see that we have an <em>8 x 8</em>&nbsp;grid with <em>64</em>&nbsp;total pixels.</p>
+<p>The point at <em>(0, 0)</em>&nbsp;corresponds to the top left pixel in our image, whereas the point <em>(7, 7)</em>&nbsp;corresponds to the bottom right corner.</p>
+<p>It is important to note that we are counting from <em>zero</em>&nbsp;rather than <em>one</em>. The Python language is <em>zero indexed</em>, meaning that we always start counting from zero. Keep this mind and you’ll avoid a lot of confusion later on.</p>
+<p>Finally, the pixel&nbsp;4 columns to the right and 5 rows down is indexed by the point&nbsp;<em>(3, 4</em>), keeping in mind that we are counting from&nbsp;<em>zero</em> rather than&nbsp;<em>one</em>.</p>
+<h1>Accessing and Manipulating Pixels</h1>
+<p>Admittedly, the example from <a title="1.1: Loading, displaying, and saving images" href="https://gurus.pyimagesearch.com/lessons/loading-displaying-and-saving-images/"><strong>Module&nbsp;1.1</strong></a> wasn’t very exciting. All we did was load an image off disk, display it, and then write it back to disk in a different image file format.&nbsp;Let’s do something a little more exciting and see how we can access and manipulate the pixels in an image.</p>
+<p>But before we start coding, if you configured your development environment to use Python virtual environments (or if you’re using the virtual machine I have supplied), be sure to access your 
+			<span id="crayon-5b6c7fd2e12cf531803033" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">gurus</span></span></span>&nbsp; environment prior to executing any code:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e12d5524326699" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">Accessing the gurus virtual environment</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;">$ workon gurus</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num" data-line="crayon-5b6c7fd2e12d5524326699-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b6c7fd2e12d5524326699-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">workon </span><span class="crayon-v">gurus</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0002 seconds] -->
+<p>
+Executing this command&nbsp;will ensure that you are in the 
+			<span id="crayon-5b6c7fd2e12dc264119055" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">gurus</span></span></span>&nbsp; Python virtual environment and your code will have access to the appropriate computer vision libraries. This is just a friendly reminder to check your Python environment before executing any code. It’s an easy, subtle step to miss that can lead to some serious head scratching when OpenCV does not import!</p>
+<p>Anyway, let’s get coding:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e12e3142888802" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">getting_and_setting.py</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;"># import the necessary packages
+import argparse
+import cv2
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to the image")
+args = vars(ap.parse_args())
+
+# load the image, grab its dimensions, and show it
+image = cv2.imread(args["image"])
+(h, w) = image.shape[:2]
+cv2.imshow("Original", image)</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num" data-line="crayon-5b6c7fd2e12e3142888802-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12e3142888802-2">2</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12e3142888802-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12e3142888802-4">4</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12e3142888802-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12e3142888802-6">6</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12e3142888802-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12e3142888802-8">8</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12e3142888802-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12e3142888802-10">10</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12e3142888802-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12e3142888802-12">12</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12e3142888802-13">13</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b6c7fd2e12e3142888802-1"><span class="crayon-c"># import the necessary packages</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12e3142888802-2"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">argparse</span></div><div class="crayon-line" id="crayon-5b6c7fd2e12e3142888802-3"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">cv2</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12e3142888802-4">&nbsp;</div><div class="crayon-line" id="crayon-5b6c7fd2e12e3142888802-5"><span class="crayon-c"># construct the argument parser and parse the arguments</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12e3142888802-6"><span class="crayon-v">ap</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">argparse</span><span class="crayon-sy">.</span><span class="crayon-e">ArgumentParser</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5b6c7fd2e12e3142888802-7"><span class="crayon-v">ap</span><span class="crayon-sy">.</span><span class="crayon-e">add_argument</span><span class="crayon-sy">(</span><span class="crayon-s">"-i"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"--image"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">required</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k ">help</span><span class="crayon-o">=</span><span class="crayon-s">"Path to the image"</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12e3142888802-8"><span class="crayon-v">args</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">vars</span><span class="crayon-sy">(</span><span class="crayon-v">ap</span><span class="crayon-sy">.</span><span class="crayon-e">parse_args</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5b6c7fd2e12e3142888802-9">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12e3142888802-10"><span class="crayon-c"># load the image, grab its dimensions, and show it</span></div><div class="crayon-line" id="crayon-5b6c7fd2e12e3142888802-11"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imread</span><span class="crayon-sy">(</span><span class="crayon-v">args</span><span class="crayon-sy">[</span><span class="crayon-s">"image"</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12e3142888802-12"><span class="crayon-sy">(</span><span class="crayon-v">h</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k ">w</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">shape</span><span class="crayon-sy">[</span><span class="crayon-o">:</span><span class="crayon-cn">2</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5b6c7fd2e12e3142888802-13"><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imshow</span><span class="crayon-sy">(</span><span class="crayon-s">"Original"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0024 seconds] -->
+<p>
+Similar to our example in the previous chapter, <strong>Lines 1-8</strong>&nbsp;handle importing the packages we need along with setting up our argument parser. There is only one command line argument needed, 
+			<span id="crayon-5b6c7fd2e12ee222500662" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-o">--</span><span class="crayon-v">image</span></span></span>&nbsp;, which is the path to the image we are going to work with.</p>
+<p><strong>Line 11</strong> handles loading the image from,&nbsp;<strong>Line 12</strong> grabs the dimensions of the image (i.e. the width and height), and finally&nbsp;<strong>Line 13</strong> displays our image to the screen:</p>
+<div id="attachment_835" style="width: 810px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/getting_and_setting_original.jpg"><img class="wp-image-835" src="./1.2_ Image basics _ PyImageSearch Gurus_files/getting_and_setting_original.jpg" alt="Figure 5: Loading our image and displaying it to our screen." width="800" height="500" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_original-300x188.jpg 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_original-1024x640.jpg 1024w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_original-865x541.jpg 865w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_original.jpg 1200w" sizes="(max-width: 800px) 100vw, 800px"></a><p class="wp-caption-text"><strong>Figure 6:</strong> Loading our image and displaying it to our screen.</p></div>
+<p>So now that we have the image loaded, how can we access the actual pixel values?</p>
+<p>Remember, OpenCV represents images as NumPy arrays. Conceptually, we can think of this representation as a matrix, as discussed in <strong><em><a href="https://gurus.pyimagesearch.com/lessons/image-basics/#overview_coord_system">Overview of the Coordinate System</a></em></strong> section&nbsp;above. In order to access a pixel value, we just need to supply the <em>x</em> and <em>y</em> coordinates of the pixel we are interested in. From there, we are given a tuple representing the Red, Green, and Blue components of the image.</p>
+<p>However, it’s important to note that OpenCV stores RGB channels in <em>reverse order</em>. While we normally think in terms of Red, Green, and Blue, OpenCV actually stores them in the order of Blue, Green, and Red.</p>
+<p>So why in the world does OpenCV store images in BGR rather than RGB order?</p>
+<p>The answer is&nbsp;<i>efficiency</i>. Multi-channel images in OpenCV are stored in row order — meaning that each of the Blue, Green, and Red components are concatenated together in sub-columns to form the entire image. Furthermore, each row of the matrix should be aligned to a 4-byte boundary, one byte for each of the Red, Green, Blue, and Alpha channels. Given our image, the last row of the image comes first in memory, thus we store the components in reverse order.</p>
+<p><strong>Note:</strong> The terms “multi-channel” images and “alpha channel” may seem confusing right now, so don’t focus too much on these terms at the present moment. My suggestion is to finish going through this module and pay close attention to the&nbsp;<strong><a href="https://gurus.pyimagesearch.com/lessons/lighting-and-color-spaces/">Lighting and color spaces</a></strong> lesson, then come back to this section of the lesson if you need further clarification.</p>
+<p>Again, I’ll make sure I say this again:&nbsp;It’s&nbsp;<strong>important to note that OpenCV stores images in <em>BGR order</em> rather than <em>RGB order</em></strong>&nbsp;since this caveat could cause some confusion later.</p>
+<p>Alright, let’s explore some code that can be used to access and manipulate pixels:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e12f5418892894" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">getting_and_setting.py</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;"># import the necessary packages
+import argparse
+import cv2
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to the image")
+args = vars(ap.parse_args())
+
+# load the image, grab its dimensions, and show it
+image = cv2.imread(args["image"])
+(h, w) = image.shape[:2]
+cv2.imshow("Original", image)
+
+# images are just NumPy arrays. The top-left pixel can be found at (0, 0)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))
+
+# now, let's change the value of the pixel at (0, 0) and make it red
+image[0, 0] = (0, 0, 255)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num" data-line="crayon-5b6c7fd2e12f5418892894-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12f5418892894-16">16</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12f5418892894-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12f5418892894-18">18</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12f5418892894-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12f5418892894-20">20</div><div class="crayon-num" data-line="crayon-5b6c7fd2e12f5418892894-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e12f5418892894-22">22</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b6c7fd2e12f5418892894-15"><span class="crayon-c"># images are just NumPy arrays. The top-left pixel can be found at (0, 0)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12f5418892894-16"><span class="crayon-sy">(</span><span class="crayon-v">b</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">g</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">r</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5b6c7fd2e12f5418892894-17"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}"</span><span class="crayon-sy">.</span><span class="crayon-k ">format</span><span class="crayon-sy">(</span><span class="crayon-v">r</span><span class="crayon-o">=</span><span class="crayon-v">r</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">g</span><span class="crayon-o">=</span><span class="crayon-v">g</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">b</span><span class="crayon-o">=</span><span class="crayon-v">b</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12f5418892894-18">&nbsp;</div><div class="crayon-line" id="crayon-5b6c7fd2e12f5418892894-19"><span class="crayon-c"># now, let's change the value of the pixel at (0, 0) and make it red</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12f5418892894-20"><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5b6c7fd2e12f5418892894-21"><span class="crayon-sy">(</span><span class="crayon-v">b</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">g</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">r</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e12f5418892894-22"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}"</span><span class="crayon-sy">.</span><span class="crayon-k ">format</span><span class="crayon-sy">(</span><span class="crayon-v">r</span><span class="crayon-o">=</span><span class="crayon-v">r</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">g</span><span class="crayon-o">=</span><span class="crayon-v">g</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">b</span><span class="crayon-o">=</span><span class="crayon-v">b</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0047 seconds] -->
+<p>
+On <strong>Line 16</strong>, we grab the pixel located at <em>(0, 0)</em>&nbsp;— the top-left corner of the image. This pixel is represented as a tuple. Again, OpenCV stores RGB pixels in <em>reverse order</em>, so when we unpack and access each element in the tuple, we are actually viewing them in BGR order. Then, <strong>Line 17</strong>&nbsp;then prints out the values of each channel to our console.</p>
+<p>As you can see, accessing pixel values is quite easy! NumPy takes care of all the hard work for us. All we are doing are providing indexes into the array.</p>
+<p>Just as NumPy makes it easy to <em>access</em>&nbsp;pixel values, it also makes it easy to <em>manipulate</em>&nbsp;pixel values.</p>
+<p>On <strong>Line 20</strong>&nbsp;we manipulate the top-left pixel in the image, which is located at coordinate <em>(0, 0)</em>&nbsp;and set it to have a value of 
+			<span id="crayon-5b6c7fd2e12fb702161985" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">)</span></span></span>&nbsp;. If we were reading this pixel value in RGB format, we would have a value of <em>0</em> for red, <em>0</em>&nbsp;for green, and <em>255</em> for blue, thus making it a pure blue color.</p>
+<p>However, as I mentioned above, we need to take special care when working with OpenCV. Our pixels are actually stored in BGR format, <strong>not</strong> RGB format.</p>
+<p>We actually read this pixel as <em>255</em>&nbsp;for red, <em>0</em>&nbsp;for green, and <em>0</em> for blue, making it a red color, <em>not</em>&nbsp;a blue color.</p>
+<p>After setting the top-left pixel to have a red color on <strong>Line 20</strong>, we then grab the pixel value and print it back to console on <strong>Lines 21 and 22</strong>,&nbsp;just to demonstrate that we have indeed successfully changed the color of the pixel.</p>
+<p>Accessing and setting a single pixel value is simple enough, but what if we wanted to use NumPy’s array slicing capabilities to access larger rectangular portions of the image? The code below demonstrates how we can do this:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e1302140883920" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">getting_and_setting.py</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;"># import the necessary packages
+import argparse
+import cv2
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to the image")
+args = vars(ap.parse_args())
+
+# load the image, grab its dimensions, and show it
+image = cv2.imread(args["image"])
+(h, w) = image.shape[:2]
+cv2.imshow("Original", image)
+
+# images are just NumPy arrays. The top-left pixel can be found at (0, 0)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))
+
+# now, let's change the value of the pixel at (0, 0) and make it red
+image[0, 0] = (0, 0, 255)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))
+
+# compute the center of the image, which is simply the width and height
+# divided by two
+(cX, cY) = (w // 2, h // 2)
+
+# since we are using NumPy arrays, we can apply slicing and grab large chunks
+# of the image -- let's grab the top-left corner
+tl = image[0:cY, 0:cX]
+cv2.imshow("Top-Left Corner", tl)</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1302140883920-24">24</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1302140883920-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1302140883920-26">26</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1302140883920-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1302140883920-28">28</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1302140883920-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1302140883920-30">30</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1302140883920-31">31</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1302140883920-24"><span class="crayon-c"># compute the center of the image, which is simply the width and height</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1302140883920-25"><span class="crayon-c"># divided by two</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1302140883920-26"><span class="crayon-sy">(</span><span class="crayon-v">cX</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">cY</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">w</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">/</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">h</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">/</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1302140883920-27">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1302140883920-28"><span class="crayon-c"># since we are using NumPy arrays, we can apply slicing and grab large chunks</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1302140883920-29"><span class="crayon-c"># of the image -- let's grab the top-left corner</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1302140883920-30"><span class="crayon-v">tl</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-o">:</span><span class="crayon-v">cY</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-o">:</span><span class="crayon-v">cX</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1302140883920-31"><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imshow</span><span class="crayon-sy">(</span><span class="crayon-s">"Top-Left Corner"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tl</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0060 seconds] -->
+<p>
+On&nbsp;<strong>Line 26</strong> we compute the center&nbsp;<em>(x, y)</em>-coordinates of the image. This is simply accomplished by dividing the width and height by&nbsp;<em>2</em>.</p>
+<p>Then, on&nbsp;<strong>Line 30</strong>&nbsp;we use simple NumPy array slicing to extract the <i>[0, cX) </i>and<em> [0, cY)</em> region of the image. In fact, this region corresponds to the top-left corner of the image! In order to grab chunks of an image, NumPy expects we provide four indexes:</p>
+<ul>
+<li><strong>Start y:</strong> The first value is the starting <em>y</em>&nbsp;coordinate. This is where our array slice will start along the y-axis. In our example above, our slice starts at <em>y=0</em>.</li>
+<li><strong>End y:</strong>&nbsp;Just as we supplied a starting <em>y</em>&nbsp;value, we must provide an ending <em>y</em>&nbsp;value. Our slice stops along the y-axis when <em>y=cY</em>.</li>
+<li><strong>Start x:</strong> The third value we must supply is the starting <em>x</em> coordinate for the slice. In order to grab the top-left region of the image, we start at <em>x=0</em>.</li>
+<li><strong>End x:</strong>&nbsp;Lastly, we need to provide the x-axis value for our slice to stop. We stop when <em>x=cX</em>.</li>
+</ul>
+<p>Once we have extracted the top-left corner of the image, <strong>Line 31&nbsp;</strong>shows us the result of the cropping. Notice how our image is just the top-left corner of our original image:</p>
+<div id="attachment_1548" style="width: 810px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/top_left_corner.jpg"><img class="wp-image-1548" src="./1.2_ Image basics _ PyImageSearch Gurus_files/top_left_corner.jpg" alt="Figure X: Extracting the top-left corner of the image using array slicing." width="800" height="500" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/top_left_corner-300x188.jpg 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/top_left_corner-1024x640.jpg 1024w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/top_left_corner-865x541.jpg 865w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/top_left_corner.jpg 1200w" sizes="(max-width: 800px) 100vw, 800px"></a><p class="wp-caption-text"><strong>Figure 7:</strong> Extracting the top-left corner of the image using array slicing.</p></div>
+<p>Let’s extend this example a little further so we can get some practice using NumPy array slicing to extract regions from images:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e1309858621515" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">getting_and_setting.py</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;"># import the necessary packages
+import argparse
+import cv2
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to the image")
+args = vars(ap.parse_args())
+
+# load the image, grab its dimensions, and show it
+image = cv2.imread(args["image"])
+(h, w) = image.shape[:2]
+cv2.imshow("Original", image)
+
+# images are just NumPy arrays. The top-left pixel can be found at (0, 0)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))
+
+# now, let's change the value of the pixel at (0, 0) and make it red
+image[0, 0] = (0, 0, 255)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))
+
+# compute the center of the image, which is simply the width and height
+# divided by two
+(cX, cY) = (w // 2, h // 2)
+
+# since we are using NumPy arrays, we can apply slicing and grab large chunks
+# of the image -- let's grab the top-left corner
+tl = image[0:cY, 0:cX]
+cv2.imshow("Top-Left Corner", tl)
+
+# in a similar fashion, let's grab the top-right, bottom-right, and bottom-left
+# corners and display them
+tr = image[0:cY, cX:w]
+br = image[cY:h, cX:w]
+bl = image[cY:h, 0:cX]
+cv2.imshow("Top-Right Corner", tr)
+cv2.imshow("Bottom-Right Corner", br)
+cv2.imshow("Bottom-Left Corner", bl)</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num" data-line="crayon-5b6c7fd2e1309858621515-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1309858621515-34">34</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1309858621515-35">35</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1309858621515-36">36</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1309858621515-37">37</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1309858621515-38">38</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1309858621515-39">39</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1309858621515-40">40</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b6c7fd2e1309858621515-33"><span class="crayon-c"># in a similar fashion, let's grab the top-right, bottom-right, and bottom-left</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1309858621515-34"><span class="crayon-c"># corners and display them</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1309858621515-35"><span class="crayon-v">tr</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-o">:</span><span class="crayon-v">cY</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">cX</span><span class="crayon-o">:</span><span class="crayon-k ">w</span><span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1309858621515-36"><span class="crayon-v">br</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-v">cY</span><span class="crayon-o">:</span><span class="crayon-v">h</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">cX</span><span class="crayon-o">:</span><span class="crayon-k ">w</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1309858621515-37"><span class="crayon-v">bl</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-v">cY</span><span class="crayon-o">:</span><span class="crayon-v">h</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-o">:</span><span class="crayon-v">cX</span><span class="crayon-sy">]</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1309858621515-38"><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imshow</span><span class="crayon-sy">(</span><span class="crayon-s">"Top-Right Corner"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tr</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1309858621515-39"><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imshow</span><span class="crayon-sy">(</span><span class="crayon-s">"Bottom-Right Corner"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">br</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1309858621515-40"><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imshow</span><span class="crayon-sy">(</span><span class="crayon-s">"Bottom-Left Corner"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">bl</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0083 seconds] -->
+<p>
+In a similar fashion to the example above, <strong>Line 35</strong> extracts the top-right corner of the image,&nbsp;<strong>Line 36</strong> extracts the bottom-right corner, and&nbsp;<strong>Line 37&nbsp;</strong>the bottom-left. Finally, all four corners of the image are displayed on screen on&nbsp;<strong>Lines 38-40</strong>, like this:</p>
+<div id="attachment_834" style="width: 810px" class="wp-caption alignnone"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/getting_and_settign_corners.jpg"><img class="wp-image-834" src="./1.2_ Image basics _ PyImageSearch Gurus_files/getting_and_settign_corners.jpg" alt="Figure 4: Extracting the four corners of an image." width="800" height="500" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_settign_corners-300x188.jpg 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_settign_corners-1024x640.jpg 1024w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_settign_corners-865x541.jpg 865w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_settign_corners.jpg 1200w" sizes="(max-width: 800px) 100vw, 800px"></a><p class="wp-caption-text"><strong>Figure 8:</strong> Extracting the four corners of an image.</p></div>
+<p>Understanding NumPy array slicing is a very important skill that we will be using heavily throughout this course. If you are unfamiliar with NumPy array slicing, I would suggest taking a few minutes and reading <a href="http://docs.scipy.org/doc/numpy/reference/arrays.indexing.html">this page</a>&nbsp;on the basics of NumPy indexes, arrays, and slicing.</p>
+<p>The last thing we are going to do is use array slices to change the color of a region of pixels:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e1310359834581" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">getting_and_setting.py</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;"># import the necessary packages
+import argparse
+import cv2
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to the image")
+args = vars(ap.parse_args())
+
+# load the image, grab its dimensions, and show it
+image = cv2.imread(args["image"])
+(h, w) = image.shape[:2]
+cv2.imshow("Original", image)
+
+# images are just NumPy arrays. The top-left pixel can be found at (0, 0)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))
+
+# now, let's change the value of the pixel at (0, 0) and make it red
+image[0, 0] = (0, 0, 255)
+(b, g, r) = image[0, 0]
+print("Pixel at (0, 0) - Red: {r}, Green: {g}, Blue: {b}".format(r=r, g=g, b=b))
+
+# compute the center of the image, which is simply the width and height
+# divided by two
+(cX, cY) = (w // 2, h // 2)
+
+# since we are using NumPy arrays, we can apply slicing and grab large chunks
+# of the image -- let's grab the top-left corner
+tl = image[0:cY, 0:cX]
+cv2.imshow("Top-Left Corner", tl)
+
+# in a similar fashion, let's grab the top-right, bottom-right, and bottom-left
+# corners and display them
+tr = image[0:cY, cX:w]
+br = image[cY:h, cX:w]
+bl = image[cY:h, 0:cX]
+cv2.imshow("Top-Right Corner", tr)
+cv2.imshow("Bottom-Right Corner", br)
+cv2.imshow("Bottom-Left Corner", bl)
+
+# now let's make the top-left corner of the original image green
+image[0:cY, 0:cX] = (0, 255, 0)
+
+# Show our updated image
+cv2.imshow("Updated", image)
+cv2.waitKey(0)</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1310359834581-42">42</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1310359834581-43">43</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1310359834581-44">44</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1310359834581-45">45</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1310359834581-46">46</div><div class="crayon-num" data-line="crayon-5b6c7fd2e1310359834581-47">47</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1310359834581-42"><span class="crayon-c"># now let's make the top-left corner of the original image green</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1310359834581-43"><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-o">:</span><span class="crayon-v">cY</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-o">:</span><span class="crayon-v">cX</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1310359834581-44">&nbsp;</div><div class="crayon-line" id="crayon-5b6c7fd2e1310359834581-45"><span class="crayon-c"># Show our updated image</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1310359834581-46"><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imshow</span><span class="crayon-sy">(</span><span class="crayon-s">"Updated"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5b6c7fd2e1310359834581-47"><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">waitKey</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0092 seconds] -->
+<p>
+On <strong>Line 43</strong>, you can see that we are again accessing the top-left corner of the image; however, this time we are setting this region to have a value of 
+			<span id="crayon-5b6c7fd2e1319141977737" class="crayon-syntax crayon-syntax-inline  crayon-theme-arduino-ide crayon-theme-arduino-ide-inline crayon-font-ubuntu-mono" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 17px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></span></span>&nbsp;&nbsp;(green).</p>
+<p><strong>Lines 46 and 47</strong>&nbsp;then show us the results of our work:</p>
+<div id="attachment_836" style="width: 810px" class="wp-caption aligncenter"><a href="./1.2_ Image basics _ PyImageSearch Gurus_files/getting_and_setting_green.jpg"><img class="wp-image-836" src="./1.2_ Image basics _ PyImageSearch Gurus_files/getting_and_setting_green.jpg" alt="Figure 7: Setting the top-left corner of the image to be a green color." width="800" height="500" srcset="https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_green-300x188.jpg 300w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_green-1024x640.jpg 1024w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_green-865x541.jpg 865w, https://gurus.pyimagesearch.com/wp-content/uploads/2015/03/getting_and_setting_green.jpg 1200w" sizes="(max-width: 800px) 100vw, 800px"></a><p class="wp-caption-text"><strong>Figure 9:</strong> Setting the top-left corner of the image to be a green color.</p></div>
+<p>So now that we are done coding, how do we run our Python script?</p>
+<p>Assuming you have downloaded the source code for this section (available at the bottom of this article), simply navigate to your downloaded source code directory and execute the command below:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e131d418009951" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">getting_and_setting.py</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Shell</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;">$ python getting_and_setting.py --image florida_trip.png</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num" data-line="crayon-5b6c7fd2e131d418009951-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b6c7fd2e131d418009951-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">python </span><span class="crayon-v">getting_and_setting</span><span class="crayon-e">.py</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-e">image </span><span class="crayon-v">florida_trip</span><span class="crayon-e">.png</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p>
+Once our script starts running, you should see some output printed to your console (<strong>Line 17</strong>). The first line of output tells us that the pixel located at <em>(0, 0)</em> has a value of&nbsp;<em>R=233</em>,&nbsp;<em>G=240</em>, and&nbsp;<em>B=246</em>. The buckets for all three channels are nearly white, indicating that the pixel is very bright.</p>
+<p>The second line of output shows us that we have successfully changed the pixel located at <em>(0, 0)</em> to be red rather than white (<strong>Lines 20-22</strong>).</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5b6c7fd2e1322810104886" class="crayon-syntax crayon-theme-arduino-ide crayon-font-ubuntu-mono crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 14px !important; line-height: 17px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><span class="crayon-title">getting_and_setting.py</span>
+			<div class="crayon-tools" style="font-size: 14px !important;height: 21px !important; line-height: 21px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Shell</span></div></div>
+			<div class="crayon-info" style="min-height: 19.6px !important; line-height: 19.6px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 17px !important; z-index: 0; opacity: 0; overflow: hidden;">Pixel at (0, 0) - Red: 233, Green: 240, Blue: 246
+Pixel at (0, 0) - Red: 255, Green: 0, Blue: 0</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table" style="">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 14px !important; line-height: 17px !important;"><div class="crayon-num" data-line="crayon-5b6c7fd2e1322810104886-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5b6c7fd2e1322810104886-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 17px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5b6c7fd2e1322810104886-1"><span class="crayon-e">Pixel </span><span class="crayon-r">at</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-v">Red</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">233</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Green</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">240</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Blue</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">246</span></div><div class="crayon-line crayon-striped-line" id="crayon-5b6c7fd2e1322810104886-2"><span class="crayon-e">Pixel </span><span class="crayon-r">at</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-v">Red</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Green</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">Blue</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0012 seconds] -->
+<p>
+From there, your output should&nbsp;match the screenshots provided earlier in this article.</p>
+<h1>Summary</h1>
+<p>In this section&nbsp;we have explored how to access and manipulate the pixels in an image using NumPy’s built-in array slicing functionality. We were even able to draw a green square using nothing but NumPy array manipulation!</p>
+<p>However, we won’t get very far using only NumPy functions. The next section&nbsp;will show you how to draw lines, rectangles, and circles using OpenCV methods.</p>
+<h1>Downloads:</h1>
+<p><a class="x-btn x-btn-real x-btn-rounded x-btn-x-large" href="https://gurus.pyimagesearch.com/protected/code/computer_vision_basics/image_basics.zip" target="_blank" data-options="thumbnail: &#39;&#39;">Download the Code</a></p>
+
+
+		
+
+				<div id="learndash_quizzes">
+			<div id="quiz_heading"><span>Quizzes</span><span class="right">Status</span></div>
+			<div id="quiz_list">
+
+							<div id="post-1619" class="is_not_sample">
+					<div class="list-count">1</div>
+					<h4>
+						<a class="notcompleted" href="https://gurus.pyimagesearch.com/quizzes/image-basics-quiz/">Image Basics Quiz</a>
+					</h4>
+				</div>
+			
+			</div>
+		</div>
+	
+
+		
+
+			
+
+<br>
+
+<p id="learndash_next_prev_link"><a href="https://gurus.pyimagesearch.com/lessons/loading-displaying-and-saving-images/" rel="prev"><span class="meta-nav">←</span> Previous Lesson</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://gurus.pyimagesearch.com/lessons/drawing/" rel="next">Next Lesson <span class="meta-nav">→</span></a></p></div>  
+
+</div>
+
+
+  <footer class="entry-footer cf">
+    <p><i class="x-icon-tags" data-x-icon=""></i> Tags: <a href="https://gurus.pyimagesearch.com/tag/instant-access/" rel="tag">instant access</a>, <a href="https://gurus.pyimagesearch.com/tag/month-1/" rel="tag">month 1</a></p>  </footer>
+  </div>
+</article>        
+      
+    </div>
+
+          
+
+
+  <aside class="x-sidebar right" role="complementary">
+          <div id="pyimgupsellwidget-2" class="widget widget_pyimgupsellwidget"><div class="widget widget-text pyimg_upsell_widget_box">
+	<h4 class="h-widget">Upgrade Your Membership</h4>	<p>
+		Upgrade to the <em>Instant Access Membership</em> to get <strong>immediate access</strong> to <strong>every lesson</strong> inside the PyImageSearch Gurus course for a one-time, upfront payment:
+	</p>
+	<ul>
+		<li><strong><em>100%, entirely self-paced</em></strong></li>
+		<li>Finish the course in <em>less than 6 months</em></li>
+		<li>Focus on the lessons that <em>interest you the most</em></li>
+		<li><strong>Access the <em>entire</em> course</strong> as soon as you upgrade</li>
+	</ul>
+	<p>
+		This upgrade offer will expire in <strong>30 days, 5 hours</strong>, so don't miss out — be sure to upgrade now.
+	</p>
+		<a href="https://gurus.pyimagesearch.com/register/pyimagesearch-gurus-instant-access-membership-fcff7b5e/?cpn=NQT6D4UJLG">Upgrade Your Membership!</a>
+	</div>
+</div><div id="ldcourseprogress-2" class="widget widget_ldcourseprogress"><h4 class="h-widget">Course Progress</h4>
+<dd class="course_progress" title="2 out of 111 steps completed">
+	<div class="course_progress_blue" style="width: 1%;">
+</div></dd></div><div id="text-3" class="widget widget_text"><h4 class="h-widget">Ready to continue the course?</h4>			<div class="textwidget"><p style="margin-bottom: 20px; font-size: 14px; text-align: center; line-height: 22px;">Click the button below to <strong>continue your journey to computer vision guru</strong>.</p>
+<center><a class="x-btn x-btn-real x-btn-rounded x-btn-large" href="https://gurus.pyimagesearch.com/pyimagesearch-gurus-course/" data-options="thumbnail: &#39;&#39;" style="width: 90%;">I'm ready, let's go!</a></center></div>
+		</div><div id="text-2" class="widget widget_text"><h4 class="h-widget">Resources &amp; Links</h4>			<div class="textwidget"><ul>
+<li><a target="blank" href="https://community.pyimagesearch.com/">PyImageSearch Gurus Community</a></li>
+<li><a href="https://gurus.pyimagesearch.com/pyimagesearch-virtual-machine/">PyImageSearch Virtual Machine</a></li>
+<li><a href="https://gurus.pyimagesearch.com/setting-up-your-python-opencv-development-environment/">Setting up your own Python + OpenCV environment</a></li>
+<li><a href="https://gurus.pyimagesearch.com/course-syllabus-content-release-schedule/">Course Syllabus &amp; Content Release Schedule</a></li>
+<li><a href="https://gurus.pyimagesearch.com/pyimagesearch-gurus-discounts-perks/">Member Perks &amp; Discounts</a></li>
+<li><a href="https://gurus.pyimagesearch.com/achievements/">Your Achievements</a></li>
+<li><a target="blank" href="http://docs.opencv.org/index.html">Official OpenCV documentation</a></li>
+</ul></div>
+		</div><div id="text-4" class="widget widget_text"><h4 class="h-widget">Your Account</h4>			<div class="textwidget"><ul>
+<li><a href="https://gurus.pyimagesearch.com/account/">Account Info</a></li>
+<li><a href="https://gurus.pyimagesearch.com/contact/">Support</a></li>
+<li><a href="https://gurus.pyimagesearch.com/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Fgurus.pyimagesearch.com%2F&amp;_wpnonce=5736b21cae">Logout</a></li>
+</ul></div>
+		</div><div id="search-2" class="widget widget_search">
+<form method="get" id="searchform" class="form-search" action="https://gurus.pyimagesearch.com/">
+  <label for="s" class="visually-hidden">Search</label>
+  <input type="text" id="s" class="search-query" name="s" placeholder="Search">
+</form></div>      </aside>
+
+    
+  </div>
+
+
+
+  
+    
+
+  <a class="x-scroll-top right fade in" href="https://gurus.pyimagesearch.com/lessons/image-basics/#top" title="Back to Top">
+    <i class="x-icon-angle-up" data-x-icon=""></i>
+  </a>
+
+  <script>
+
+  jQuery(document).ready(function($) {
+
+    var windowObj            = $(window);
+    var body                 = $('body');
+    var bodyOffsetBottom     = windowObj.scrollBottom();             // 1
+    var bodyHeightAdjustment = body.height() - bodyOffsetBottom;     // 2
+    var bodyHeightAdjusted   = body.height() - bodyHeightAdjustment; // 3
+    var scrollTopAnchor      = $('.x-scroll-top');
+
+    function sizingUpdate(){
+      var bodyOffsetTop = windowObj.scrollTop();
+      if ( bodyOffsetTop > ( bodyHeightAdjusted * 0.75 ) ) {
+        scrollTopAnchor.addClass('in');
+      } else {
+        scrollTopAnchor.removeClass('in');
+      }
+    }
+
+    windowObj.bind('scroll', sizingUpdate).resize(sizingUpdate);
+    sizingUpdate();
+
+    scrollTopAnchor.click(function(){
+      $('html,body').animate({ scrollTop: 0 }, 850, 'easeInOutExpo');
+      return false;
+    });
+
+  });
+
+  </script>
+
+  
+
+  
+    <footer class="x-colophon bottom" role="contentinfo">
+      <div class="x-container max width">
+
+        
+        
+                  <div class="x-colophon-content">
+            <p>© 2018 PyImageSearch. All Rights Reserved.</p>          </div>
+        
+      </div>
+    </footer>
+
+  
+
+  
+  </div> <!-- END #top.site -->
+
+  
+<!-- Drip -->
+<script type="text/javascript">
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {}; 
+  _dcs.account = '4768429';
+  
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true; 
+    dc.src = '//tag.getdrip.com/4768429.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  // extract the path from the URL
+  path = window.location.pathname.substring(1);
+  path = path.substring(0, path.indexOf("/"));
+
+  // check if this is the thank you page
+  if (path == "thank-you"){
+    // track that the user has made a purchase
+    window._dcq = window._dcq || [];
+    window._dcq.push(["track", "purchased gurus membership", {}]);
+  }
+
+  // check if this is the registration page
+  else if (path == "register"){
+    // grab reference to Drip
+    window._dcq = window._dcq || [];
+
+    // check to see if the user is checking out
+    if (window.location.search.indexOf("action=checkout") != -1){
+      // track that the user has started checkout
+      window._dcq.push(["track", "started gurus checkout", {}]);
+    }
+
+    else{
+      // track that the user is registering
+      window._dcq.push(["track", "viewed gurus registration", {}]);
+    }
+  }
+});
+</script>
+<div id="un-thankyou" style="display: none;">
+	<h2>Thank you!</h2>
+	<p>
+		Your message has been received, I will get back to you ASAP!	</p>
+	<a href="https://gurus.pyimagesearch.com/lessons/image-basics/#" id="un-feedback-close"><img src="./1.2_ Image basics _ PyImageSearch Gurus_files/ok.png" id="thankyou-image" alt="Close" width="32" height="32"></a>
+</div>
+<link rel="stylesheet" id="badgeos-front-css" href="./1.2_ Image basics _ PyImageSearch Gurus_files/badgeos-front.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/gurus.pyimagesearch.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/thickbox.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/credly-badge-builder.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var badgeos_feedback_buttons = {"ajax_url":"\/wp-admin\/admin-ajax.php","user_id":"2227"};
+var badgeos_feedback_buttons = {"ajax_url":"\/wp-admin\/admin-ajax.php","user_id":"2227"};
+var BadgeosCredlyData = {"ajax_url":"\/wp-admin\/admin-ajax.php","message":"Would you like to display this badge on social networks and add it to your lifelong badge collection?","confirm":"Yes, send to Credly","cancel":"Cancel","share":"Share on Credly!","localized_error":"Error:","errormessage":"Error: Timed out"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/badgeos-achievements.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/jquery.form.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"https:\/\/gurus.pyimagesearch.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/scripts.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/x-body.min.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/x-shortcodes-body.min.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./1.2_ Image basics _ PyImageSearch Gurus_files/learndash_template_script.js.download"></script>
+
+  
+    <script id="x-customizer-js">
+      // if the unauthorized login link is on the page, remove it
+if (jQuery("div.mepr-unauthorized-message").length){
+jQuery(document).ready(function(){jQuery("div.mepr-login-form-wrap").hide();});}
+
+// if the unauthorized query string is set, then hide the introductory login
+if (location.search.indexOf("action=mepr_unauthorized") != -1){jQuery("p.gurus_login_info").hide();}
+
+jQuery(".achievement_tweet").click(function(e){
+	e.preventDefault();
+	win = window.open(jQuery(this).attr("href"), 'Post on Twitter','height=350,width=600');
+	if (window.focus){win.focus()}
+	return false;
+});    </script>
+
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61169353-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<a href="https://gurus.pyimagesearch.com/lessons/image-basics/#" id="un-button" class="un-right css3" style="background-color: rgb(22, 159, 230); color: rgb(255, 255, 255); margin-top: -24.5px; right: 38px;">Feedback</a><div class="credly-share-popup" style="display: none;"><div class="credly-wrap"><span>Would you like to display this badge on social networks and add it to your lifelong badge collection?</span><div class="badgeos-spinner"></div><span class="credly-message" style="display: none;"><strong class="error">Error: Timed out</strong></span><input type="submit" class="credly-button credly-send" value="Yes, send to Credly"><a class="credly-button credly-cancel" href="https://gurus.pyimagesearch.com/lessons/image-basics/#">Cancel</a><div style="clear: both;"></div></div><div style="clear: both;"></div></div></body></html>
